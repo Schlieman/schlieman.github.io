@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0f14" />
   <title>Rail & Transport Study Pack – Interview-Ready Notes</title>
   <style>
     :root{
@@ -11,15 +12,16 @@
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg,#0a0f16,#0a1119 40%,#0a1120);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif}
-    header{position:sticky;top:0;z-index:50;background:rgba(10,15,22,.8);backdrop-filter:saturate(130%) blur(10px);border-bottom:1px solid var(--border)}
+    body{margin:0;background:linear-gradient(180deg,#0a0f16,#0a1119 40%,#0a1120);color:var(--ink);font:clamp(15px,1.5vw,17px)/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:transparent}
+    header{position:sticky;top:0;z-index:50;background:rgba(10,15,22,.85);backdrop-filter:saturate(130%) blur(10px);border-bottom:1px solid var(--border)}
     .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
     h1{margin:0;font-size:1.4rem;letter-spacing:.2px}
     main{display:grid;grid-template-columns:260px 1fr;gap:22px;max-width:1100px;margin:22px auto;padding:0 20px}
+    section{scroll-margin-top:90px}
     nav{position:sticky;top:70px;align-self:start}
     nav .card{padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
     nav a{display:block;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px}
-    nav a:hover{background:#0b1522;color:var(--ink)}
+    nav a:hover, nav a:focus{background:#0b1522;color:var(--ink)}
     section.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:22px}
     h2{margin-top:0;font-size:1.25rem}
     h3{margin:18px 0 8px;font-size:1.05rem;color:var(--accent)}
@@ -28,12 +30,12 @@
     ul{margin:8px 0 16px 22px}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    button,.btn{background:#0b1726;color:var(--ink);border:1px solid var(--border);padding:8px 12px;border-radius:10px;cursor:pointer}
+    button,.btn{background:#0b1726;color:var(--ink);border:1px solid var(--border);padding:10px 14px;border-radius:10px;cursor:pointer;min-height:44px;min-width:44px}
     button:hover,.btn:hover{background:#0f1e33}
     .accordion{border:1px solid var(--border);border-radius:12px;overflow:hidden}
     .acc-item+.acc-item{border-top:1px solid var(--border)}
-    .acc-head{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;background:#0b1522;cursor:pointer}
-    .acc-head span{color:var(--ink)}
+    .acc-head{display:flex;justify-content:space-between;gap:10px;padding:14px 16px;background:#0b1522;cursor:pointer}
+    .acc-head:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     .acc-body{display:none;padding:14px;background:var(--panel)}
     .acc-item.open .acc-body{display:block}
     .flashgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
@@ -45,8 +47,9 @@
     .tag{font-size:.75rem;color:#bcd7ff}
     footer{max-width:1100px;margin:30px auto;padding:0 20px 30px;color:var(--muted)}
     .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.85em; background:#0b1726; border:1px solid var(--border); padding:.15em .45em; border-radius:6px}
-    @media(max-width:950px){main{grid-template-columns:1fr} nav{position:static;top:auto} }
+    @media(max-width:950px){main{grid-template-columns:1fr} nav{position:static;top:auto} nav .card{margin-bottom:10px} .flashgrid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))} }
     @media print{header,nav,.cta-row,.pill{display:none} body{background:#fff;color:#000} section.card{border:0;box-shadow:none} a{color:#000} }
+    @media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} .card-mini{transition:none} }
   </style>
 </head>
 <body>
@@ -107,10 +110,9 @@
             <div class="acc-body">
               <ul>
                 <li>Give a 60‑second example of <em>fail‑safe</em> thinking you’ve used (watchdogs, redundancy, safe‑state I/O).</li>
-                <li>Explain how track circuits detect trains and why failure is designed to be 
-                  “occupied”.</li>
+                <li>Explain how track circuits detect trains and why failure is designed to be “occupied”.</li>
                 <li>CBTC in a sentence: continuous radio + precise location + moving block = shorter headways with high safety.</li>
-                <li>Local example: Sydney Metro runs driverless CBTC (e.g., Urbalis‑class) — highlight benefits.</li>
+                <li>Local example: Sydney Metro runs driverless CBTC — highlight benefits.</li>
               </ul>
             </div>
           </div>
@@ -290,12 +292,23 @@
 
   <script>
     // Accordion controls
-    function toggleAcc(el){ el.parentElement.classList.toggle('open'); }
+    function toggleAcc(el){ const item = el.parentElement; const isOpen = item.classList.toggle('open'); const head = item.querySelector('.acc-head'); if(head){ head.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); } }
     function expandAll(open){
       document.querySelectorAll('.acc-item').forEach(it=>{
         it.classList[open?'add':'remove']('open');
+        const head = it.querySelector('.acc-head');
+        if(head){ head.setAttribute('aria-expanded', open ? 'true' : 'false'); }
       });
     }
+    // make accordion headers keyboard/touch accessible
+    window.addEventListener('DOMContentLoaded',()=>{
+      document.querySelectorAll('.acc-head').forEach(h=>{
+        h.setAttribute('role','button');
+        h.setAttribute('tabindex','0');
+        h.setAttribute('aria-expanded', h.parentElement.classList.contains('open') ? 'true':'false');
+        h.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toggleAcc(h);} });
+      });
+    });
 
     // Flashcards data (Front/Back)
     const CARDS = [
@@ -304,7 +317,7 @@
       ["Why does a track circuit failure delay trains?", "It fails to 'occupied' (safe), holding signals until verified clear."],
       ["Fixed block vs moving block?", "Fixed: predefined sections; Moving: CBTC calculates dynamic safe separation from real-time position."],
       ["Three CBTC building blocks?", "ATP (protection), ATO (operation), ATS (supervision)."],
-      ["One Australian example of CBTC?", "Sydney Metro uses driverless CBTC."] ,
+      ["One Australian example of CBTC?", "Sydney Metro uses driverless CBTC."],
       ["Two CBTC benefits vs conventional.", "Higher capacity (shorter headways); continuous supervision improves safety/reliability."],
       ["List key catenary components.", "Contact & messenger wires, droppers, insulators, registration arms, tensioners, masts/gantries."],
       ["Why 25 kV AC for new mainlines?", "Lower current → smaller conductors/fewer substations; efficient over long distances."],
@@ -367,13 +380,14 @@
       }
     });
 
-    // CSV export
+    // CSV export (mobile-friendly)
     function exportCSV(){
       const rows = [['Front','Back'], ...CARDS];
-      const csv = rows.map(r=>r.map(x=>'"'+x.replaceAll('"','""')+'"').join(',')).join('\n');
+      const csv = rows.map(r=>r.map(x=>'"'+x.replaceAll('"','""')+'"').join(',')).join('
+');
       const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download='Rail_Study_Flashcards.csv'; a.click();
+      const a = document.createElement('a'); a.href = url; a.download='Rail_Study_Flashcards.csv'; document.body.appendChild(a); a.click(); a.remove();
       setTimeout(()=>URL.revokeObjectURL(url), 2500);
     }
 
