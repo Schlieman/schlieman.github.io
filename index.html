@@ -6,10 +6,7 @@
   <meta name="theme-color" content="#0b0f14" />
   <title>Rail & Transport Study Pack – Interview-Ready Notes</title>
   <style>
-    :root{
-      --bg:#0b0f14; --panel:#111821; --ink:#e6eef7; --muted:#a8b3c7; --accent:#79b8ff; --accent-2:#34d399; --warn:#f59e0b;
-      --card:#0f1520; --border:#1f2a37; --shadow:0 10px 30px rgba(0,0,0,.35);
-    }
+    :root{ --bg:#0b0f14; --panel:#111821; --ink:#e6eef7; --muted:#a8b3c7; --accent:#79b8ff; --accent-2:#34d399; --warn:#f59e0b; --card:#0f1520; --border:#1f2a37; --shadow:0 10px 30px rgba(0,0,0,.35);} 
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0;background:linear-gradient(180deg,#0a0f16,#0a1119 40%,#0a1120);color:var(--ink);font:clamp(15px,1.5vw,17px)/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:transparent}
@@ -28,7 +25,6 @@
     .pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:.8rem}
     .kicker{color:var(--muted);font-size:.95rem}
     ul{margin:8px 0 16px 22px}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
     button,.btn{background:#0b1726;color:var(--ink);border:1px solid var(--border);padding:10px 14px;border-radius:10px;cursor:pointer;min-height:44px;min-width:44px}
     button:hover,.btn:hover{background:#0f1e33}
@@ -50,6 +46,7 @@
     @media(max-width:950px){main{grid-template-columns:1fr} nav{position:static;top:auto} nav .card{margin-bottom:10px} .flashgrid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))} }
     @media print{header,nav,.cta-row,.pill{display:none} body{background:#fff;color:#000} section.card{border:0;box-shadow:none} a{color:#000} }
     @media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important} .card-mini{transition:none} }
+    .box{border:1px dashed var(--border);border-radius:12px;padding:12px;background:#0b1522}
   </style>
 </head>
 <body>
@@ -70,6 +67,9 @@
         <a href="#rsnl">3) Safety – RSNL Basics</a>
         <a href="#comms">4) Communications Integration</a>
         <a href="#emerging">5) Emerging Tech</a>
+        <a href="#scenarios">6) Practice Scenarios</a>
+        <a href="#glossary">7) Glossary</a>
+        <a href="#questionbank">8) Interview Q Bank</a>
         <a href="#flashcards">Flashcards & Export</a>
       </div>
     </nav>
@@ -86,6 +86,7 @@
         <div class="cta-row">
           <button onclick="expandAll(true)">Expand all sections</button>
           <button onclick="expandAll(false)">Collapse all</button>
+          <button onclick="window.print()">Print / Save PDF</button>
         </div>
       </section>
 
@@ -125,6 +126,20 @@
               </ul>
             </div>
           </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Study resources & references</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <div class="box">
+                <ul>
+                  <li>Network Rail – Track circuits explained: <a href="https://www.networkrail.co.uk/stories/track-circuits-explained/" target="_blank" rel="noopener">networkrail.co.uk/stories/track-circuits-explained</a></li>
+                  <li>Sydney Metro (CBTC in practice): <a href="https://www.sydneymetro.info/" target="_blank" rel="noopener">sydneymetro.info</a></li>
+                  <li>Alstom Urbalis CBTC: <a href="https://www.alstom.com/solutions/signalling/urbalis" target="_blank" rel="noopener">alstom.com/solutions/signalling/urbalis</a></li>
+                  <li>RISSB – Australian signalling standards: <a href="https://www.rissb.com.au/" target="_blank" rel="noopener">rissb.com.au</a></li>
+                  <li>UITP CBTC overview: <a href="https://www.uitp.org/knowledge-hub/modes/cbtc/" target="_blank" rel="noopener">uitp.org/…/cbtc</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -160,6 +175,20 @@
                 <li>Why is 25 kV AC often chosen for new mainlines?</li>
                 <li>Name the main catenary components you’d see on site.</li>
               </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Study resources & references</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <div class="box">
+                <ul>
+                  <li>Network Rail – Electrification overview: <a href="https://www.networkrail.co.uk/industry-and-commercial/electrification/" target="_blank" rel="noopener">networkrail.co.uk/…/electrification</a></li>
+                  <li>Railway electrification system (AC vs DC): <a href="https://en.wikipedia.org/wiki/Railway_electrification_system" target="_blank" rel="noopener">wikipedia.org/wiki/Railway_electrification_system</a></li>
+                  <li>RISSB – 25 kV AC traction (landing): <a href="https://www.rissb.com.au/" target="_blank" rel="noopener">rissb.com.au</a></li>
+                  <li>RailSafe (Sydney Trains – OHW safety): <a href="https://railsafe.org.au/" target="_blank" rel="noopener">railsafe.org.au</a></li>
+                  <li>Queensland Rail – network info: <a href="https://www.queenslandrail.com.au/" target="_blank" rel="noopener">queenslandrail.com.au</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -199,6 +228,19 @@
               </ul>
             </div>
           </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Study resources & references</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <div class="box">
+                <ul>
+                  <li>ONRSR – National Rail Safety Regulator: <a href="https://www.onrsr.com.au/" target="_blank" rel="noopener">onrsr.com.au</a></li>
+                  <li>NTC – Rail Safety National Law overview: <a href="https://www.ntc.gov.au/laws-and-regulations/rail-safety-national-law" target="_blank" rel="noopener">ntc.gov.au/laws-and-regulations/rail-safety-national-law</a></li>
+                  <li>ONRSR – Guidelines (SFAIRP, SMS, change mgmt): <a href="https://www.onrsr.com.au/safety-improvement/guidelines" target="_blank" rel="noopener">onrsr.com.au/…/guidelines</a></li>
+                  <li>RISSB – Standards & Codes of Practice: <a href="https://www.rissb.com.au/" target="_blank" rel="noopener">rissb.com.au</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -233,6 +275,19 @@
                 <li>What is the role of DTRS on Sydney’s network?</li>
                 <li>Why are networks moving from GSM‑R to FRMCS?</li>
               </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Study resources & references</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <div class="box">
+                <ul>
+                  <li>UIC – FRMCS (Future Railway Mobile Communication System): <a href="https://uic.org/rail-system/telecoms-signalling/frmcs" target="_blank" rel="noopener">uic.org/…/frmcs</a></li>
+                  <li>Transport for NSW – Digital Systems: <a href="https://www.transport.nsw.gov.au/projects/digital-systems" target="_blank" rel="noopener">transport.nsw.gov.au/projects/digital-systems</a></li>
+                  <li>ARTC – National Train Communications System: <a href="https://www.artc.com.au/" target="_blank" rel="noopener">artc.com.au</a></li>
+                  <li>GSM‑R overview: <a href="https://en.wikipedia.org/wiki/GSM-R" target="_blank" rel="noopener">wikipedia.org/wiki/GSM-R</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -270,7 +325,69 @@
               </ul>
             </div>
           </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Study resources & references</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <div class="box">
+                <ul>
+                  <li>Australasian Railway Association – tech & innovation: <a href="https://www.ara.net.au/" target="_blank" rel="noopener">ara.net.au</a></li>
+                  <li>Monash Institute of Railway Technology (MIRT): <a href="https://www.monash.edu/engineering/institutes/irt" target="_blank" rel="noopener">monash.edu/engineering/institutes/irt</a></li>
+                  <li>University of Newcastle – research (data-driven maintenance): <a href="https://www.newcastle.edu.au/" target="_blank" rel="noopener">newcastle.edu.au</a></li>
+                  <li>RISSB – Digital & innovation programs: <a href="https://www.rissb.com.au/" target="_blank" rel="noopener">rissb.com.au</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <!-- Practice Scenarios -->
+      <section id="scenarios" class="card">
+        <h2>6) Practice scenarios (group & interview)</h2>
+        <ol>
+          <li><strong>Electrification choice:</strong> A suburban extension must choose 1.5 kV DC vs 25 kV AC. Draft decision criteria (capacity, CAPEX/OPEX, clearances, interfaces, construction staging, fleet compatibility) and recommend with rationale.</li>
+          <li><strong>Signalling upgrade:</strong> Convert a fixed-block corridor to CBTC. Identify dependencies (comms coverage, onboard equipment, migration/overlay, platform screen doors), risks, and a staged cutover approach.</li>
+          <li><strong>Track possession planning:</strong> Replace turnout in a constrained possession. Structure tasks, safety controls, roles, and contingency.</li>
+          <li><strong>Radio migration:</strong> Transition from GSM‑R/DTRS to FRMCS without service disruption. Outline spectrum, coverage, devices, cyber, and training.</li>
+        </ol>
+        <div class="cta-row"><span class="muted">Tip: Time‑box 15 min: 3 min clarify, 8 min options & trade‑offs, 3 min recommendation, 1 min risks/next steps.</span></div>
+      </section>
+
+      <!-- Glossary -->
+      <section id="glossary" class="card">
+        <h2>7) Glossary (fast recall)</h2>
+        <ul>
+          <li><strong>Fail‑safe:</strong> Default to safest state under fault.</li>
+          <li><strong>Interlocking:</strong> Logic preventing conflicting routes.</li>
+          <li><strong>ATP / ATO / ATS:</strong> Protection / Operation / Supervision components of CBTC.</li>
+          <li><strong>Fixed vs moving block:</strong> Static vs dynamic train separation.</li>
+          <li><strong>OHW/OLE:</strong> Overhead wiring / line equipment for traction power.</li>
+          <li><strong>SFAIRP:</strong> So Far As Is Reasonably Practicable (risk reduction test under RSNL).</li>
+          <li><strong>SMS:</strong> Safety Management System (policies, procedures, assurance).</li>
+          <li><strong>DTRS / NTCS:</strong> NSW Digital Train Radio System / ARTC National Train Comms System.</li>
+          <li><strong>FRMCS:</strong> Future Railway Mobile Communication System (GSM‑R successor).</li>
+          <li><strong>WILD:</strong> Wheel Impact Load Detection (condition monitoring).</li>
+        </ul>
+      </section>
+
+      <!-- Interview Question Bank -->
+      <section id="questionbank" class="card">
+        <h2>8) Interview question bank (practice out loud)</h2>
+        <ol>
+          <li>Why rail/transport and why John Holland specifically?</li>
+          <li>Explain a project where you used fail‑safe thinking.</li>
+          <li>How would you explain CBTC to a non‑engineer in one minute?</li>
+          <li>Trade‑offs between 1.5 kV DC and 25 kV AC for a brownfield upgrade.</li>
+          <li>How do you contribute to an SMS as a graduate?</li>
+          <li>Describe a time you handled conflicting priorities in a team.</li>
+          <li>Where would you apply IoT for the quickest reliability win on a commuter line?</li>
+          <li>How do you approach risk assessment to meet SFAIRP?</li>
+          <li>Example of integrating comms and signalling on a project.</li>
+          <li>What motivates you about rotations and working in regional locations?</li>
+          <li>Tell us about a mistake you made and how you learned from it.</li>
+          <li>How do you balance innovation with standards compliance?</li>
+          <li>What questions do you have for us (graduates, rotations, support)?</li>
+        </ol>
       </section>
 
       <!-- Flashcards -->
@@ -367,24 +484,13 @@
       for(let i=CARDS.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[CARDS[i],CARDS[j]]=[CARDS[j],CARDS[i]]}
       render();
     }
-    function focusCard(i){
-      idx = Math.max(0, Math.min(CARDS.length-1, i));
-      const el = grid.children[idx]; if(el) el.focus();
-    }
-    document.addEventListener('keydown',e=>{
-      const key = e.key.toLowerCase();
-      if(key==='j'){ focusCard(idx+1); }
-      if(key==='k'){ focusCard(idx-1); }
-      if(key==='f'){
-        const el = grid.children[idx]; if(el) el.classList.toggle('flip');
-      }
-    });
+    function focusCard(i){ idx = Math.max(0, Math.min(CARDS.length-1, i)); const el = grid.children[idx]; if(el) el.focus(); }
+    document.addEventListener('keydown',e=>{ const key = e.key.toLowerCase(); if(key==='j'){ focusCard(idx+1); } if(key==='k'){ focusCard(idx-1); } if(key==='f'){ const el = grid.children[idx]; if(el) el.classList.toggle('flip'); } });
 
-    // CSV export (mobile-friendly)
+    // CSV export (mobile-friendly, fixed newline)
     function exportCSV(){
       const rows = [['Front','Back'], ...CARDS];
-      const csv = rows.map(r=>r.map(x=>'"'+x.replaceAll('"','""')+'"').join(',')).join('
-');
+      const csv = rows.map(r=>r.map(x=> '"' + String(x).replaceAll('"','""') + '"').join(',')).join('\n');
       const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a'); a.href = url; a.download='Rail_Study_Flashcards.csv'; document.body.appendChild(a); a.click(); a.remove();
