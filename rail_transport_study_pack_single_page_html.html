@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rail & Transport Study Pack – Interview-Ready Notes</title>
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#111821; --ink:#e6eef7; --muted:#a8b3c7; --accent:#79b8ff; --accent-2:#34d399; --warn:#f59e0b;
+      --card:#0f1520; --border:#1f2a37; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#0a0f16,#0a1119 40%,#0a1120);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif}
+    header{position:sticky;top:0;z-index:50;background:rgba(10,15,22,.8);backdrop-filter:saturate(130%) blur(10px);border-bottom:1px solid var(--border)}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 20px}
+    h1{margin:0;font-size:1.4rem;letter-spacing:.2px}
+    main{display:grid;grid-template-columns:260px 1fr;gap:22px;max-width:1100px;margin:22px auto;padding:0 20px}
+    nav{position:sticky;top:70px;align-self:start}
+    nav .card{padding:14px;border:1px solid var(--border);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+    nav a{display:block;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px}
+    nav a:hover{background:#0b1522;color:var(--ink)}
+    section.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:22px}
+    h2{margin-top:0;font-size:1.25rem}
+    h3{margin:18px 0 8px;font-size:1.05rem;color:var(--accent)}
+    .pill{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted);font-size:.8rem}
+    .kicker{color:var(--muted);font-size:.95rem}
+    ul{margin:8px 0 16px 22px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    button,.btn{background:#0b1726;color:var(--ink);border:1px solid var(--border);padding:8px 12px;border-radius:10px;cursor:pointer}
+    button:hover,.btn:hover{background:#0f1e33}
+    .accordion{border:1px solid var(--border);border-radius:12px;overflow:hidden}
+    .acc-item+.acc-item{border-top:1px solid var(--border)}
+    .acc-head{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;background:#0b1522;cursor:pointer}
+    .acc-head span{color:var(--ink)}
+    .acc-body{display:none;padding:14px;background:var(--panel)}
+    .acc-item.open .acc-body{display:block}
+    .flashgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+    .card-mini{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;min-height:120px;position:relative;transform-style:preserve-3d;transition:transform .5s}
+    .card-mini.flip{transform:rotateY(180deg)}
+    .face{position:absolute;inset:0;padding:14px;backface-visibility:hidden}
+    .back{transform:rotateY(180deg)}
+    .muted{color:var(--muted)}
+    .tag{font-size:.75rem;color:#bcd7ff}
+    footer{max-width:1100px;margin:30px auto;padding:0 20px 30px;color:var(--muted)}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:.85em; background:#0b1726; border:1px solid var(--border); padding:.15em .45em; border-radius:6px}
+    @media(max-width:950px){main{grid-template-columns:1fr} nav{position:static;top:auto} }
+    @media print{header,nav,.cta-row,.pill{display:none} body{background:#fff;color:#000} section.card{border:0;box-shadow:none} a{color:#000} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Rail & Transport Study Pack <span class="pill">Interview-Ready Notes</span></h1>
+      <div class="kicker">Focus areas: Signalling • Overhead Wiring • Safety (RSNL) • Comms Integration • Emerging Tech</div>
+    </div>
+  </header>
+
+  <main>
+    <nav>
+      <div class="card">
+        <strong style="display:block;margin:6px 0 10px">Quick Nav</strong>
+        <a href="#howto">How to use</a>
+        <a href="#signalling">1) Signalling Principles</a>
+        <a href="#ohw">2) Overhead Wiring (AC vs DC)</a>
+        <a href="#rsnl">3) Safety – RSNL Basics</a>
+        <a href="#comms">4) Communications Integration</a>
+        <a href="#emerging">5) Emerging Tech</a>
+        <a href="#flashcards">Flashcards & Export</a>
+      </div>
+    </nav>
+
+    <div>
+      <section id="howto" class="card">
+        <h2>How to use this page (30–60 mins per topic)</h2>
+        <ol>
+          <li><strong>Skim</strong> the <em>What to know</em> bullets for definitions and examples.</li>
+          <li><strong>Say</strong> the <em>Interview talking points</em> out loud — teach it like you would to a peer.</li>
+          <li><strong>Test</strong> yourself with the <em>Cold‑call questions</em> without looking, then check.</li>
+          <li><strong>Drill</strong> the flashcards for 10 mins (aim for ≥85% correct).</li>
+        </ol>
+        <div class="cta-row">
+          <button onclick="expandAll(true)">Expand all sections</button>
+          <button onclick="expandAll(false)">Collapse all</button>
+        </div>
+      </section>
+
+      <!-- 1) Signalling -->
+      <section id="signalling" class="card">
+        <h2>1) Rail signalling principles: fail‑safe, track circuits, CBTC</h2>
+        <div class="accordion">
+          <div class="acc-item open">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>What to know</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li><strong>Fail‑safe design</strong>: systems default to the safest state on fault (e.g., a failed track circuit reads <em>occupied</em> so signals hold at stop).</li>
+                <li><strong>Track circuits</strong>: rails form an electrical circuit; train axles <em>shunt</em> the circuit to indicate occupancy. Broken rail/insulation failure usually → occupied (safe fail).</li>
+                <li><strong>Interlocking</strong>: prevents conflicting routes from being set at the same time.</li>
+                <li><strong>Fixed vs moving block</strong>: conventional signalling divides the line into fixed blocks; <strong>CBTC</strong> uses continuous comms and precise train location to allow dynamic moving blocks → higher capacity.</li>
+                <li><strong>CBTC building blocks</strong>: ATP (protection), ATO (operation), ATS (supervision).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Interview talking points</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Give a 60‑second example of <em>fail‑safe</em> thinking you’ve used (watchdogs, redundancy, safe‑state I/O).</li>
+                <li>Explain how track circuits detect trains and why failure is designed to be 
+                  “occupied”.</li>
+                <li>CBTC in a sentence: continuous radio + precise location + moving block = shorter headways with high safety.</li>
+                <li>Local example: Sydney Metro runs driverless CBTC (e.g., Urbalis‑class) — highlight benefits.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Cold‑call questions</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Why does a track circuit failure cause delays?</li>
+                <li>Outline ATP vs ATO vs ATS in CBTC.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2) Overhead wiring -->
+      <section id="ohw" class="card">
+        <h2>2) Overhead wiring systems: catenary, AC vs DC</h2>
+        <div class="accordion">
+          <div class="acc-item open">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>What to know</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li><strong>Catenary system</strong>: contact wire, catenary/messenger, droppers, insulators, registration arms, masts/gantries, tensioning.</li>
+                <li><strong>Australia</strong>: many legacy suburban networks (e.g., Melbourne, Sydney) run <strong>1.5 kV DC</strong>; newer heavy rail/freight often <strong>25 kV AC</strong>.</li>
+                <li><strong>Why 25 kV AC?</strong> Lower current for same power → smaller conductors, wider substation spacing; needs higher clearances & insulation coordination.</li>
+                <li><strong>Interfaces</strong>: traction substations step down utility HV and rectify for DC; return current via rails with bonding/earthing to manage stray currents.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Interview talking points</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Give a quick AC vs DC comparison: power losses, substation spacing, clearances, retrofit complexity, EMC/stray current.</li>
+                <li>Point to local examples (1.5 kV DC metros; 25 kV AC mainlines).</li>
+                <li>Mention safety near OHW: isolation permits, earthing, minimum approach distances.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Cold‑call questions</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Why is 25 kV AC often chosen for new mainlines?</li>
+                <li>Name the main catenary components you’d see on site.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3) RSNL -->
+      <section id="rsnl" class="card">
+        <h2>3) Rail project safety standards: RSNL basics (Australia)</h2>
+        <div class="accordion">
+          <div class="acc-item open">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>What to know</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li><strong>RSNL</strong> establishes the national regulator (ONRSR) and requires accreditation for railway operations.</li>
+                <li><strong>SFAIRP</strong>: ensure safety <em>so far as is reasonably practicable</em> by weighing likelihood, severity, knowledge, availability/suitability of controls, and cost.</li>
+                <li><strong>SMS</strong> (Safety Management System) is mandatory for accredited operators; contractors must comply with the operator’s SMS.</li>
+                <li>Expectations: hazard ID, change management, competence, fatigue, asset management, assurance, and continual improvement.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Interview talking points</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Explain SFAIRP in a minute and give a design example (e.g., add redundancy where risk is intolerable).</li>
+                <li>How you contribute as a grad: hazard ID, toolbox talks, procedures, incident learning, configuration control.</li>
+                <li>Call out signalling, level crossings, and radio systems as safety‑critical assets requiring documented controls and assurance.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Cold‑call questions</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>What is SFAIRP and how would you show it on a project?</li>
+                <li>Why is accreditation relevant to contractors and graduates on site?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4) Comms integration -->
+      <section id="comms" class="card">
+        <h2>4) Integration of communication systems in rail</h2>
+        <div class="accordion">
+          <div class="acc-item open">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>What to know</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Train‑to‑wayside comms enable modern control: e.g., GSM‑R‑based DTRS (NSW), ARTC NTCS (carrier networks), FRMCS as GSM‑R successor.</li>
+                <li>Integration points: signalling/interlocking & CBTC, Traffic Management, SCADA (traction/stations), condition monitoring, passenger info/CCTV.</li>
+                <li>Reliability & cybersecurity: redundant bearers, emergency call priority, deterministic interfaces to train control; coverage design in tunnels/cuttings.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Interview talking points</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Sketch how CBTC radios, TMS, and DTRS/NTCS interoperate.</li>
+                <li>Why migrate from GSM‑R to FRMCS and what that implies for spectrum and IP networks.</li>
+                <li>Practicalities: handover, interference management, failover to safe states.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Cold‑call questions</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>What is the role of DTRS on Sydney’s network?</li>
+                <li>Why are networks moving from GSM‑R to FRMCS?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5) Emerging tech -->
+      <section id="emerging" class="card">
+        <h2>5) Emerging tech: IoT, predictive maintenance, automation</h2>
+        <div class="accordion">
+          <div class="acc-item open">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>What to know</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li><strong>IoT & condition monitoring</strong>: sensors on rolling stock and track (vibration, temperature, rail stress, WILD) feed predictive models to reduce failures.</li>
+                <li><strong>Digital twins</strong>: fuse sensor data with asset models for risk‑based decisions.</li>
+                <li><strong>Automation</strong>: CBTC enables driverless/UTO metros; alters safety assurance and maintenance practices.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Interview talking points</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Example: bearing temperature + vibration alerts cutting downtime; WILD + track geometry data to prioritise tamping or welds.</li>
+                <li>Link to SFAIRP: proactive controls reduce risk exposure and verify control effectiveness.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-head" onclick="toggleAcc(this)"><span>Cold‑call questions</span><span class="muted">click to toggle</span></div>
+            <div class="acc-body">
+              <ul>
+                <li>Name two data sources you’d combine for track failure prediction.</li>
+                <li>How does UTO change the safety case and maintenance regime?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flashcards -->
+      <section id="flashcards" class="card">
+        <h2>Flashcards (click to flip)</h2>
+        <div class="cta-row">
+          <button onclick="shuffleCards()">Shuffle</button>
+          <button onclick="exportCSV()">Export CSV</button>
+          <span class="muted">Tip: press <span class="kbd">f</span> to flip selected, <span class="kbd">j</span>/<span class="kbd">k</span> to move.</span>
+        </div>
+        <div class="flashgrid" id="grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    Built for rapid interview prep. Print this page for a clean handout.
+  </footer>
+
+  <script>
+    // Accordion controls
+    function toggleAcc(el){ el.parentElement.classList.toggle('open'); }
+    function expandAll(open){
+      document.querySelectorAll('.acc-item').forEach(it=>{
+        it.classList[open?'add':'remove']('open');
+      });
+    }
+
+    // Flashcards data (Front/Back)
+    const CARDS = [
+      ["Define 'fail-safe' in rail signalling.", "System defaults to the safest state on fault (e.g., track circuit fails to 'occupied' so signals stay at stop)."],
+      ["How do track circuits detect a train?", "Rails are part of an electrical circuit; the train axles shunt the circuit indicating 'occupied'."],
+      ["Why does a track circuit failure delay trains?", "It fails to 'occupied' (safe), holding signals until verified clear."],
+      ["Fixed block vs moving block?", "Fixed: predefined sections; Moving: CBTC calculates dynamic safe separation from real-time position."],
+      ["Three CBTC building blocks?", "ATP (protection), ATO (operation), ATS (supervision)."],
+      ["One Australian example of CBTC?", "Sydney Metro uses driverless CBTC."] ,
+      ["Two CBTC benefits vs conventional.", "Higher capacity (shorter headways); continuous supervision improves safety/reliability."],
+      ["List key catenary components.", "Contact & messenger wires, droppers, insulators, registration arms, tensioners, masts/gantries."],
+      ["Why 25 kV AC for new mainlines?", "Lower current → smaller conductors/fewer substations; efficient over long distances."],
+      ["Where is 1.5 kV DC used in AU?", "Legacy suburban networks (e.g., Melbourne, Sydney)."],
+      ["One trade-off of 25 kV AC vs 1.5 kV DC.", "25 kV requires larger clearances & insulation coordination; DC fits tight urban brownfields."],
+      ["How is DC traction power supplied?", "Utility HV transformed & rectified; positive OHW with negative return via rails, bonding/earthing."],
+      ["What is RSNL and who enforces it?", "Rail Safety National Law; ONRSR is the regulator via state adoption."],
+      ["Explain SFAIRP in one sentence.", "Reduce risks so far as reasonably practicable considering likelihood, severity, knowledge, options, and cost."],
+      ["Evidence you would keep for SFAIRP.", "Hazard analysis, options assessed, CBA, implemented controls, V&V results."],
+      ["What is an SMS?", "Safety Management System: policies, procedures, and controls to manage safety risks."],
+      ["Do contractors follow the operator's SMS?", "Yes — contractors must comply with the accredited operator's SMS."],
+      ["What is DTRS in NSW?", "Digital Train Radio System using GSM‑R for train communications."],
+      ["What is NTCS?", "ARTC's National Train Communications System using carrier networks and in‑cab equipment."],
+      ["Why migrate from GSM‑R to FRMCS?", "GSM‑R is 2G/obsolescent; FRMCS provides modern IP/broadband features."],
+      ["Two integration points between comms and signalling.", "CBTC radio to ATS; TMS/SCADA interfaces for power/signalling status."],
+      ["IoT example on track.", "Rail temperature & vibration sensors feeding predictive maintenance models."],
+      ["Digital twin example.", "Bridge or turnout digital twins fusing sensors with asset models for risk‑based decisions."],
+      ["Two data sources for predicting track failure.", "WILD + track geometry/defect history (plus traffic tonnage)."],
+      ["How does UTO affect operations?", "Requires robust CBTC, platform screen doors, redundancy, and revised maintenance/assurance."],
+      ["Safety near OHW to mention.", "Isolation permits, earthing bonds, minimum approach distances, protection screens."],
+      ["Two signalling assets in a register.", "Points machines; object/interlocking controllers."],
+      ["Why is change management vital in signalling?", "Small config changes can affect safety — controlled V&V/approvals needed."],
+      ["Another 'fail to safe' example besides track circuits?", "Signal lamp failure → most restrictive aspect; comms loss triggers safer states."],
+      ["How would you contribute to an SMS as a grad?", "Hazard ID, document controls, follow procedures, report near misses, support audits."]
+    ];
+
+    // Render cards
+    const grid = document.getElementById('grid');
+    let idx = 0;
+    function render(){
+      grid.innerHTML = '';
+      CARDS.forEach((c,i)=>{
+        const wrap = document.createElement('div');
+        wrap.className = 'card-mini';
+        wrap.tabIndex = 0;
+        wrap.dataset.i = i;
+        wrap.innerHTML = `<div class="face">${escapeHtml(c[0])}<div class="muted tag" style="position:absolute;bottom:10px;right:12px">Q${i+1}</div></div>
+                          <div class="face back">${escapeHtml(c[1])}</div>`;
+        wrap.addEventListener('click',()=>wrap.classList.toggle('flip'));
+        wrap.addEventListener('keydown',e=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); wrap.click(); } });
+        grid.appendChild(wrap);
+      });
+      focusCard(0);
+    }
+    function escapeHtml(s){return s.replace(/[&<>]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[m]))}
+    function shuffleCards(){
+      for(let i=CARDS.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[CARDS[i],CARDS[j]]=[CARDS[j],CARDS[i]]}
+      render();
+    }
+    function focusCard(i){
+      idx = Math.max(0, Math.min(CARDS.length-1, i));
+      const el = grid.children[idx]; if(el) el.focus();
+    }
+    document.addEventListener('keydown',e=>{
+      const key = e.key.toLowerCase();
+      if(key==='j'){ focusCard(idx+1); }
+      if(key==='k'){ focusCard(idx-1); }
+      if(key==='f'){
+        const el = grid.children[idx]; if(el) el.classList.toggle('flip');
+      }
+    });
+
+    // CSV export
+    function exportCSV(){
+      const rows = [['Front','Back'], ...CARDS];
+      const csv = rows.map(r=>r.map(x=>'"'+x.replaceAll('"','""')+'"').join(',')).join('\n');
+      const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download='Rail_Study_Flashcards.csv'; a.click();
+      setTimeout(()=>URL.revokeObjectURL(url), 2500);
+    }
+
+    render();
+  </script>
+</body>
+</html>
